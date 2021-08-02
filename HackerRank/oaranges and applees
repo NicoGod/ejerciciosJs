@@ -1,0 +1,21 @@
+function countApplesAndOranges(s, t, a, b, apples, oranges) {
+    // Write your code here
+    let applesInside = 0;
+    let orangesInside = 0;
+    const apple = apples.forEach((applesIn) => {
+      let range = a + applesIn;
+      if(range >= s && range <= t) {
+        applesInside++;
+      }
+    });
+    const orange = oranges.forEach((orangeIn) => {
+      let range = b + orangeIn;
+      if(range >= s && range <= t) {
+        orangesInside++;
+        }
+      });
+    console.log(applesInside);
+    console.log(orangesInside);
+}
+
+countApplesAndOranges(7, 11, 5, 15, [ -2, 2, 1 ], [ 5, -6 ])

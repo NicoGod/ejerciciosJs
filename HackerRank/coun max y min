@@ -1,0 +1,22 @@
+function breakingRecords(scores) {
+    // Write your code here
+    let max = scores[0];
+    let min = scores[0];
+    let countMin = 0; 
+    let countMax = 0;
+    for(let score of scores) {
+      if(max < score) {
+        countMax ++;
+        max = score;
+      }
+      if(min > score) {
+        countMin ++;
+        min = score;
+      }
+    }
+    return [countMax, countMin];
+}
+breakingRecords([
+  10, 5, 20, 20, 4,
+   5, 2, 25,  1
+])

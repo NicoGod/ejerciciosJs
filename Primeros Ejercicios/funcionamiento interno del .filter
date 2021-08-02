@@ -1,0 +1,32 @@
+
+function filter(array, cb){
+  const filtered = [];
+  for(let elem of array){
+    const shouldPush = cb(elem);
+    if(shouldPush){
+      filtered.push(elem);
+    }
+  }
+  return filtered;
+}
+
+function getRandomArbitrary(min, max) { 
+
+  //creo una variable que crea un al azar
+  
+  const random = Math.random() * (max - min) + min;   
+  
+  // creo la variable que quita los decimales al nro random hacia abajo
+  
+  const randomFloor = Math.floor(random)
+  return randomFloor;
+  
+}
+const numbers = (new Array(20).fill(1)).map(() => getRandomArbitrary(1, 20))
+
+const filterFn = function(value) {
+  return value >= 10;
+}
+
+console.log(filter(numbers, filterFn));
+//[2,4,6]

@@ -1,0 +1,30 @@
+function getTotalX(a, b) {
+    // Write your code here
+    let count = 0;
+    const maxA = Math.max(...a);
+    const minB = Math.min(...b);
+    for(let i = maxA; i <= minB; i ++) {
+      if(factores(a, i) && divisibles(b, i)) {
+        count ++;
+      }
+    }
+  return count;
+}
+function factores(fact, num) {
+  for(let f of fact) {
+    if(!(num % f == 0)) {
+      return false;
+    }
+  }
+  return true;
+}
+function divisibles(divi, num) {
+  for(let d of divi) {
+    if(!(d % num == 0)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+getTotalX([ 2, 4 ], [ 16, 32, 96 ])

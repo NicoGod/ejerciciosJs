@@ -1,0 +1,25 @@
+function gradingStudents(grades) {
+    // Write your code here
+  const roundedGrades = grades.map(grade => {
+    // check de multiplo de 5
+    // return early: cuando hay logicas complejas lo idoneo es identificar los casos para la q no aplica esa logica, para hacer un return temprano y no procesar al pedo
+    if(grade < 38 || grade % 5 == 0) {
+      return grade;
+    } 
+    
+    let dif = 0;
+    do {
+      dif++;
+    } while((grade + dif) % 5 != 0);
+    
+    if(dif < 3) {
+      return grade + dif;
+    }
+    else {
+      return grade;
+    }
+  });
+  return roundedGrades
+}
+
+console.log(gradingStudents([73, 67, 38, 33]))

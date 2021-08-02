@@ -1,0 +1,17 @@
+function outer() {
+  const name = 'marcos';
+  //creo la variable que contiene una funcion -
+  const inner = function innerFnName() {
+    //no importa donde se invoque esta funcion, se va "recordar" el valor de name
+    console.log(name);
+  }
+  //retorno la funcion, eso quiere decir, que name deja de existir
+  return inner;
+}
+// creo una variable que contiene el resultado de la primera invocaccion de la funcion Madre(el resultado ES una funcion) 
+// al invocar el resultado trae - name -. por inner tiene la capacidad de recordar la variable con su valor asignado 
+const fnWithClousure = outer();
+
+
+console.log(outer);
+console.log(fnWithClousure);

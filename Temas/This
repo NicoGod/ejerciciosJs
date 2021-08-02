@@ -1,0 +1,15 @@
+function ask(question) {
+  //this es la referencia al contexto - aca no hay ninguno-
+  console.log(this.teacher,question);
+}
+//se genera la funcion que contiene el contexto para THIS
+function otherClass(){
+  var myContext = {
+      teacher: "Yo"
+  };
+  //.call otra manera de invocar la funcion pasandole explicitamente un contexto
+  //"why" es el parametro para question de la funcion
+  ask.call(myContext,"why"); //"yo" "why"
+}
+
+otherClass();

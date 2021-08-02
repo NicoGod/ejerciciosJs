@@ -1,0 +1,51 @@
+const nombres = ['juan', 'ivan', 'gordo', 'rulo', 'tinchi', 'ledo', 'fares', 'liniers', 'marce', 'faty', 'enzo perez', 'gallardo', 'pratto'];
+
+// a partir del array 'nombres' crear un nuevo array en el que cada elemento sea un objeto
+// con las siguientes proppeidades : 'nombre', 'edad' (random, con la funcion que te guardaste, con un minimo de 20 y maximo de 35), 'mail' (se concatena el nombre y la edad, el dominio es '@sarasa.com')
+
+// el array generado tiene que filtrar a los que sean menores a 25
+// por ultimo, recorrer cada elemento y loguearlo
+
+function getRandomArbitrary(min, max) { 
+  //creo una variable que crea un al azar
+  const random = Math.random() * (max - min) + min;   
+  // creo la variable que quita los decimales al nro random   hacia abajo
+  const randomFloor = Math.floor(random)
+  return randomFloor;
+}
+// "personas" contiene el resutlado del mapeo
+//todo esta fucnion hasta el RETURN PERSONA; es una funcion de callback
+const personas = nombres.map(function(nombre){
+  // si la funcion espera que le pase algo (va)
+  //(argumento)cuando envio - (parametros)cuando recibo
+  const edadRandom = getRandomArbitrary(20, 35); 
+  const persona = {    
+    name: nombre,    
+    age: edadRandom,
+    mail: `${nombre}.${edadRandom}@sarasa.com`
+   }
+  return persona;
+});
+// .filter comprueba cada valor del array y si cumple la condicion lo agrega al nuevo array sino no lo agrega
+const mayores = personas.filter(function (persona){
+    if(persona.age >= 25){
+      return true;
+    }else{
+      return false; 
+    }    
+});
+const orden = mayores.sort(function(a, b){
+    if(a.age >= b.age){
+    return 1;
+  }
+  else{
+    return -1;
+  }
+});
+const logeo = orden.forEach(function(log){
+  console.log(log);
+});
+
+
+
+

@@ -1,0 +1,33 @@
+function add(arr) {
+  var d1 = 0;
+  var d2 = 0;
+  for(let i = 0; i < arr.length; i++) {
+    //guardar el sub array  - 
+    //otra menera podira ser arr[i][i]
+    //accedo en la misma linea al elem del subArray
+    //arr = Array de Arrays
+    // arr[i] = el sub array
+    // arr[i][i] = el elemento del sub array
+    const sub = arr[i];
+    d1 += sub[i]
+    //calculo el indice de la 2` diagonal
+    const indexD = (arr.length - i - 1) 
+    // accedo al elem del indice calculado
+    d2 += sub[indexD];
+    
+  }
+  return {d1, d2}
+}
+
+add([
+     [1,2,3],
+     [4,5,6],
+     [7,8,9]
+   ]);
+
+
+
+    // var indexD1 = (n * i + i)
+    // var indexD2 = (n * (i + 1) - (i + 1))
+    // d1 = d1 + arr[indexD1];
+    // d2 = d2 + arr[indexD2]

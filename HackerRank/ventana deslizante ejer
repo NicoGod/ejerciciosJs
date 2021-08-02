@@ -1,0 +1,18 @@
+function birthday(s, d, m) {
+    // Write your code here
+    let count = 0;
+    // (s.length - m) == 3 en este caso.
+    // caso de ventana deslizante. Tomo dos numeros concecutivos ej. 0,1 - 1,2 - 2,3
+    for(let i = 0; i <= (s.length - m); i++) {
+      let acc = 0;
+      for(let j = i; j < (m + i); j++) {
+        acc += s[j];
+      }
+      if(acc == d) {
+        count ++;
+      }
+    }
+    console.log(count)
+    return count;
+}
+birthday([ 1, 2, 1, 3, 2 ], 3, 2);

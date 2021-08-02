@@ -1,0 +1,28 @@
+const reverseString = (string) => {
+  const array = string.split('');
+  const swap = []; // []
+  for(let carct of array ){
+      swap.unshift(carct);
+  }
+// let swapedString = swap.toString();  
+// return swapedString.replaceAll(',', '');
+return swap.toString().replaceAll(',', ''); 
+}
+
+// ******************
+
+const tests = [
+ {value: '', expected: ''},
+  {value: 'robot', expected: 'tobor'},
+  {value: 'Ramen', expected: 'nemaR'},
+  {value: 'I am hungry!', expected: '!yrgnuh ma I'},
+  {value: 'racecar', expected: 'racecar'},
+  {value: 'reward', expected: 'drawer'},
+]
+
+for(let test of tests) {
+  const result = reverseString(test.value);
+  console.log('expected', test.expected, 'result', result);
+}
+
+

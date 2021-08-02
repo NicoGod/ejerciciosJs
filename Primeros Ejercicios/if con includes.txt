@@ -1,0 +1,24 @@
+/** 
+  * Task description: Write a method that returns a duplicate-free array 
+  * Expected Result: Duplicate-free array [1, 2, 3, 1, 2] => [1, 2, 3] 
+  * Task Complexity: 2 of 5 
+  * @param {Array<string | number>} array - Array of primitive data types 
+  * @returns {Array} 
+*/
+const unique = (array) => {
+  const nros = [];
+  for(let elem of array){
+    //The includes() method determines whether an array contains a specified element.
+    //This method returns true if the array contains the element, and false if not
+    //en este caso se niega. La sentencia es asi para poder ser de facil redaccion
+This method returns true if the array contains the element, and false if not.
+    const doesNotExist = !nros.includes(elem);
+    if(doesNotExist){
+      nros.push(elem);
+    }
+  }
+  
+ return nros;
+}
+const data = [1, 2, 1, 2, 3];
+console.log(unique(data)); // [1, 2, 3]

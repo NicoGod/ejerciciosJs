@@ -1,0 +1,25 @@
+//una funcion que se llame map, va a recibir dos parametros un array y una funcion de callback
+
+//array => [1,2,3]
+function map(array, cb) {
+  const mapped = []; //[2,4,6]
+  for(let innerElem of array) { //[1,2,3]
+    // elem 1--2 -- 3
+    const newElem = cb(innerElem);
+    // newElem 2 (priemra vuelta) -- 4
+    mapped.push(newElem);
+  }
+  return mapped;
+};
+
+
+//*************
+
+const numbers = [1,2,3];
+
+const fnTr = function(value) {
+  return value * 2;
+}
+
+console.log(map(numbers, fnTr));
+//[2,4,6]

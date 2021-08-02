@@ -1,0 +1,92 @@
+// const alumnos = [{alumno: 'jonh', nota: 10}] este es de ejemplo
+
+// hacer una funcion que reciba como parametro el nombre del alumno y la nota
+// agregar al array de alumnos el objeto con las propiedades alumno y nota
+
+// agregar al menos 5 alumnos con notas distintas
+
+// hacer otra funcion que ordene el array en base a las notas de los alumnos
+// de mayor a menor
+
+
+// resultado debe ser algo asi
+// [{alumno: 'alm1', nota: 9.5}, {alumno: 'alm2', nota: 7}, {alumno: 'alm3', nota: 5.5}, {alumno: 'alm4', nota: 3}]
+
+//hacer una funcion que permita modificar una propiedad del alumno,
+//la funcion va a recibir el nombre del alumno, el nombre la propiedad y el valor de la propiedad
+
+let alumnos = [];
+
+//genero un valor "nota" random
+
+function getRandomArbitrary(min, max) { 
+
+  //creo una variable que crea un al azar
+  
+  const random = Math.random() * (max - min) + min;   
+  
+  // creo la variable que quita los decimales al nro random hacia abajo
+  
+  const randomFloor = Math.floor(random)
+  return randomFloor;
+  
+}
+
+function aluNota(nombreAlu, nota){
+  const nombreNota = {
+      nombre: nombreAlu,
+      calificacion: nota 
+  };
+  alumnos.push(nombreNota);
+}
+
+function orden(){
+  function compare(a, b) {
+    if(a.calificacion > b.calificacion ){
+      return -1;
+    }
+    else {
+      return 1;
+    }      
+  }
+  alumnos = alumnos.sort(compare); // ordenando agregando un array sort.
+  
+  
+}
+
+//una funcion que contiene un objeto, con el fin de poder modificar un valor/propiedad 
+//de manera mas dinamica
+ 
+function modificarValorAlumno(nombreAlumno, key, value) {
+  const alumno = alumnos.find(objAlumno => objAlumno.nombre === nombreAlumno);
+  //toma el valor/propiedad key del objeto y la remplaza "pisa su valor"
+  alumno[key] = value;
+  /*/obj.prop
+  const key = 'prop';
+  obj['prop']
+  obj[key]
+  /*/
+}
+
+// ******************************************
+
+
+const nombres = ['pepe','lola','jose','ragnar','corsair'];
+for(let nombre of nombres) {
+  
+ //se toma el valor de retorno te getRandom; 
+  
+  const notaRandom = getRandomArbitrary(1, 11);
+  
+  aluNota(nombre, notaRandom); 
+
+}
+orden();
+
+console.log(alumnos);
+
+
+modificarValorAlumno('ragnar', 'calificacion', 20);
+
+console.log(alumnos);
+

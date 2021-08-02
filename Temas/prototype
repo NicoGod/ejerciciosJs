@@ -1,0 +1,16 @@
+function Workshop(teacher){
+  this.teacher = teacher;
+}
+//le asigna al prototype de Work una nueva propiedad ask que le esta pasando una funcion
+Workshop.prototype.ask = function (question) {
+  console.log(this.teacher,question);
+};
+//
+var deepJS = new Workshop("kyle");
+var reactJS = new Workshop("yo");
+
+deepJS.ask("is 'prototype a class?'");
+
+reactJS.ask("Ins't 'prototype' ugly?");
+
+//agrega funcionalidad a un tipo de dato/ forma de compartir funcionalidades o valores.

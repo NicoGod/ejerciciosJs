@@ -1,0 +1,14 @@
+function birthdayCakeCandles(candles) {
+  tallest = 0;
+  count = 0;
+  for (let elem of candles){
+    if(elem > tallest){
+      tallest = elem;
+      count = 1;
+    }
+    else if(elem === tallest) {
+      count++;
+    }
+    return count;
+  }
+birthdayCakeCandles([1, 2, 3, 3])

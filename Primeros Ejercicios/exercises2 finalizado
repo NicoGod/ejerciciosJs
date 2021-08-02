@@ -1,0 +1,74 @@
+class Bookshelf {
+	constructor() {
+		this.favoriteBooks = [];
+	
+  }
+  //saco la palabra function porque esta dentro de una clase. Sigue siendo una funcion
+  addFavoriteBook(bookName) {
+    if (!bookName.includes("Great")) {
+      this.favoriteBooks.push(bookName);
+    }
+  }
+ //dentro de una clase una funcion pasa a ser un metodo 
+  printFavoriteBooks() {
+  	console.log(`Favorite Books: ${String(this.favoriteBooks.length)}`);
+	  for (let bookName of this.favoriteBooks) {
+	    console.log(bookName);
+	  }
+  }
+	
+}
+
+
+
+function loadBooks(bookshelf) {
+  
+	fakeAjax(BOOK_API, function callback(booksArray) {
+    for(let book of booksArray){
+      bookshelf.addFavoriteBook(book);
+    }
+    bookshelf.printFavoriteBooks();
+    //console.log(booksArray);
+  });
+  
+}
+
+var BOOK_API = "https://some.url/api";
+
+//crear inst
+var bookshelfInstance = new Bookshelf();
+loadBooks(bookshelfInstance);
+
+// ***********************
+
+// NOTE: don't modify this function at all
+function fakeAjax(url,cb) {
+	setTimeout(function fakeLoadingDelay(){
+		cb([
+			"A Song of Ice and Fire",
+			"The Great Gatsby",
+			"Crime & Punishment",
+			"Great Expectations",
+			"You Don't Know JS"
+		]);
+	},500);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,154 @@
+const personas = [{
+  "id": 1,
+  "first_name": "Raynell",
+  "last_name": "Bohlje",
+  "email": "rbohlje0@yellowbook.com",
+  "age": 27,
+  "available": false
+}, {
+  "id": 2,
+  "first_name": "Claudette",
+  "last_name": "Lindro",
+  "email": "clindro1@amazonaws.com",
+  "age": 41,
+  "available": false
+}, {
+  "id": 3,
+  "first_name": "Lucius",
+  "last_name": "Keely",
+  "email": "lkeely2@qq.com",
+  "age": 50,
+  "available": true
+}, {
+  "id": 4,
+  "first_name": "Karola",
+  "last_name": "Secrett",
+  "email": "ksecrett3@thetimes.co.uk",
+  "age": 44,
+  "available": false
+}, {
+  "id": 5,
+  "first_name": "Cobb",
+  "last_name": "Routledge",
+  "email": "croutledge4@wordpress.com",
+  "age": 28,
+  "available": false
+}, {
+  "id": 6,
+  "first_name": "Zulema",
+  "last_name": "Smurfit",
+  "email": "zsmurfit5@goo.gl",
+  "age": 20,
+  "available": true
+}, {
+  "id": 7,
+  "first_name": "Dorise",
+  "last_name": "Beggi",
+  "email": "dbeggi6@usda.gov",
+  "age": 23,
+  "available": false
+}, {
+  "id": 8,
+  "first_name": "Zola",
+  "last_name": "Durnin",
+  "email": "zdurnin7@elegantthemes.com",
+  "age": 31,
+  "available": false
+}, {
+  "id": 9,
+  "first_name": "Jeremias",
+  "last_name": "Bloomfield",
+  "email": "jbloomfield8@ovh.net",
+  "age": 33,
+  "available": true
+}, {
+  "id": 10,
+  "first_name": "Tamarra",
+  "last_name": "Hassell",
+  "email": "thassell9@japanpost.jp",
+  "age": 31,
+  "available": true
+}, {
+  "id": 11,
+  "first_name": "Deana",
+  "last_name": "Bayliss",
+  "email": "dbaylissa@dedecms.com",
+  "age": 38,
+  "available": true
+}, {
+  "id": 12,
+  "first_name": "Gregorio",
+  "last_name": "Bowcher",
+  "email": "gbowcherb@networksolutions.com",
+  "age": 26,
+  "available": true
+}, {
+  "id": 13,
+  "first_name": "Dela",
+  "last_name": "Mustard",
+  "email": "dmustardc@bing.com",
+  "age": 27,
+  "available": true
+}, {
+  "id": 14,
+  "first_name": "Ceil",
+  "last_name": "Mephan",
+  "email": "cmephand@irs.gov",
+  "age": 21,
+  "available": false
+}, {
+  "id": 15,
+  "first_name": "Dulciana",
+  "last_name": "Christoffe",
+  "email": "dchristoffee@wired.com",
+  "age": 43,
+  "available": true
+}, {
+  "id": 16,
+  "first_name": "Consuelo",
+  "last_name": "Annakin",
+  "email": "cannakinf@creativecommons.org",
+  "age": 42,
+  "available": false
+}, {
+  "id": 17,
+  "first_name": "Hulda",
+  "last_name": "Domingues",
+  "email": "hdominguesg@sourceforge.net",
+  "age": 29,
+  "available": false
+}, {
+  "id": 18,
+  "first_name": "Jeff",
+  "last_name": "Duligal",
+  "email": "jduligalh@github.com",
+  "age": 23,
+  "available": false
+}, {
+  "id": 19,
+  "first_name": "Oswell",
+  "last_name": "Harrowing",
+  "email": "oharrowingi@ft.com",
+  "age": 22,
+  "available": true
+}, {
+  "id": 20,
+  "first_name": "Benny",
+  "last_name": "Horrigan",
+  "email": "bhorriganj@sina.com.cn",
+  "age": 24,
+  "available": true
+}];
+
+//filtrar el array personas con las que sean mayores a 30 anios y esten disponibles (available)
+// crear un nuevo array con solo los mails de las personas filtradas
+
+const mayores = personas.filter(function (persona){
+  // se pone la condicion dentro del return porq el mismo valor de la condicion es igual al que va a devolver. por eso es posible poner la condicion dentro del return y no en un if ( return trueªª return false)
+  return persona.age >= 30 && persona.available;
+});
+// const save = mayores;
+const correos = mayores.map(function(persona){
+  return persona.email;
+}) 
+console.log(correos)

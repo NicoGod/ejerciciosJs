@@ -1,0 +1,19 @@
+function staircase(n) {
+    // Write your code here
+  // let spaces = new Array(n - 1).fill(' ').join('');
+  let spaces = ''; //otra forma de hacerlo
+  for(let i = 0; i < n - 1; i++) { // 
+    spaces += ' '//
+  }
+  
+  
+  for(let i = 1; i <= n; i++) {
+    console.log(`${spaces}${'#'.repeat(i)}`);
+    
+    spaces = spaces.slice(0, spaces.length - 1);
+  }
+}
+staircase(6)
+
+// const arr = [' ', ' ', '#']
+// console.log(arr.join(''))

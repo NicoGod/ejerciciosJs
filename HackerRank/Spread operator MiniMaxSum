@@ -1,0 +1,32 @@
+function miniMaxSum(arr) {
+    // Write your code here
+  let sums = [];
+  for (let i = 0; i < arr.length; i++) {
+     // ...[spread operator], al hacer de esta manera se puede generar la copy del array que se necesita en el ejj (... sirve para los objetos)
+    let copy = [...arr];
+    copy.splice(i, 1);
+    let sum = copy.reduce((acc, value) => acc + value)
+    sums.push(sum);
+  }
+  sums = sums.sort((a, b) => {
+   if (a > b) {
+     return 1
+   } 
+   else {
+     return -1
+   } 
+  })
+  let max = sums[sums.length - 1];
+  let min = sums[0];
+  // for(let k = 1; k < sums.length; k++) {
+  //   if (max < sums[k]) {
+  //     max = sums[k];       
+  //   }
+  //   if (min > sums[k]) {
+  //     min = sums[k];
+  //   }
+  // }
+  console.log(max, min)
+}
+
+miniMaxSum([5, 3, 2, 1, 4])
